@@ -1,0 +1,75 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+footer {
+  letter-spacing: 1px;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  padding: 0 40px 26px 40px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  max-width: 1920px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "lato";
+  font-size: 15px;
+  font-style: italic;
+  @media only screen and (max-width: $breakpoint-tablet) {
+    font-size: 10px;
+    padding: 0 20px 26px 20px;
+  }
+  @include clickThrough;
+  .links {
+    max-width: 641px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex: 1;
+    text-align: center;
+    gap: 10px;
+    padding: 0 10px;
+    @include clickThrough;
+    a {
+      text-decoration: none;
+      color: black;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    @media only screen and (max-width: $breakpoint-tablet) {
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    @media only screen and (max-width: $breakpoint-mobile) {
+      position: absolute;
+      bottom: 25px;
+      flex-wrap: wrap;
+      row-gap: 9px;
+    }
+  }
+  @media only screen and (max-width: $breakpoint-mobile) {
+    padding-bottom: 73px;
+  }
+  .socials {
+    width: 80px;
+    gap: 40px;
+    height: 19px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include clickThrough;
+    a {
+      width: 19px;
+      height: 19px;
+      background-image: url("../assets/images/instagram.svg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    a.facebook {
+      background-image: url("../assets/images/facebook.svg");
+    }
+  }
+}

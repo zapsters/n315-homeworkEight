@@ -1,0 +1,89 @@
+@use "variables" as *;
+@use "mixins" as *;
+@media only screen and (max-width: $breakpoint-tablet) {
+  .login {
+    .forms {
+      flex-direction: column;
+      margin-top: 170px;
+      form {
+        margin-bottom: 114px;
+      }
+      form:last-of-type {
+        margin-bottom: 173px;
+      }
+    }
+  }
+}
+.login {
+  min-height: 100vh;
+  background-color: $site-yellow;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .forms {
+    max-width: 711px;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    h1 {
+      font-family: "Lato";
+      font-weight: 900;
+      margin-bottom: 60px;
+      letter-spacing: 2px;
+    }
+    span {
+      font-family: "Lato";
+      font-style: italic;
+    }
+    .button {
+      @include site-btn-yellow;
+    }
+
+    .input-group {
+      position: relative;
+      font-family: "lato";
+      font-size: 12px;
+      margin-bottom: 43px;
+      letter-spacing: 1px;
+    }
+
+    .input-group .form-input {
+      display: block;
+      background: none;
+      font-weight: 500;
+      padding: 5px;
+      background-color: transparent !important;
+      width: 100%;
+      border: none;
+      border-radius: 0;
+      border-bottom: 3px solid rgba(0, 0, 0, 1);
+      margin: 25px 0;
+    }
+
+    .input-group .form-input:not([value=""]) ~ .form-input-label,
+    .input-group .form-input:focus ~ .form-input-label {
+      top: -18px;
+      left: 5px;
+      color: #000;
+    }
+
+    .input-group .form-input-label {
+      color: #000;
+      font-size: 14px;
+      font-weight: normal;
+      position: absolute;
+      pointer-events: none;
+      left: 8px;
+      top: 3px;
+      -webkit-transition: 300ms ease all;
+      transition: 300ms ease all;
+    }
+
+    .input-group .form-input-label.shrink {
+      top: -18px;
+      left: 5px;
+      color: #181d2f;
+    }
+  }
+}

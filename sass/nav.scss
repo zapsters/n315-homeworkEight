@@ -1,0 +1,103 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+nav {
+  max-width: 1920px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0 50px;
+  z-index: 100;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  font-family: "Caveat";
+  font-size: 25px;
+  font-weight: 400;
+  color: black;
+  @include clickThrough;
+  @media only screen and (max-width: $breakpoint-tablet) {
+    padding: 0 37px;
+  }
+  .logo {
+    z-index: 110;
+    margin-top: 32px;
+    background-image: url("../assets/logo/logo.svg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 55px;
+    max-width: 167px;
+    aspect-ratio: 167 / 55;
+    @media only screen and (max-width: $breakpoint-tablet) {
+      height: 47px;
+    }
+    a {
+      height: 100%;
+      width: 100%;
+      background-color: red;
+    }
+  }
+  .links {
+    margin-top: 40px;
+    gap: 41px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    @include clickThrough;
+    @media only screen and (max-width: $breakpoint-tablet) {
+      display: none;
+    }
+    a {
+      text-decoration: none;
+      color: black;
+      display: flex;
+      border-bottom: 3px solid transparent;
+    }
+    a.active:not(.button) {
+      border-bottom: 3px solid black;
+    }
+    a:hover:not(.active, .button) {
+      border-bottom: 3px solid rgba(0, 0, 0, 0.425);
+    }
+    .button {
+      @include site-btn-yellow;
+    }
+  }
+  .hamburger {
+    z-index: 110;
+    margin-top: 40px;
+    font-size: 30px;
+    height: 100%;
+    display: none;
+    transform: scaleX(1.6);
+    cursor: pointer;
+    margin-right: 8px;
+    @media only screen and (max-width: $breakpoint-tablet) {
+      display: block;
+    }
+  }
+  .collapsible {
+    position: absolute;
+    top: 0;
+    padding: 0px 100px 0px 100px;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.329);
+    width: 100%;
+    color: black;
+    height: 0px;
+    transition: height 0.4s ease-out;
+    overflow: hidden;
+    .collapsibleLinks {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: space-evenly;
+      flex-direction: column;
+      margin-top: 95px;
+      margin-bottom: 20px;
+    }
+  }
+}
