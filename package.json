@@ -4,13 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "compile": "sass sass/styles.scss css/styles.css -w",
-    "liveserver": "live-server"
+    "compile": "sass dist/sass/styles.scss dist/css/styles.css -w",
+    "liveserver": "live-server",
+    "build-webpack": "webpack"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "sass": "^1.80.4"
+    "sass": "^1.80.4",
+    "webpack": "^5.96.1",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "firebase": "^11.0.1",
+    "jquery": "^3.7.1"
   }
 }

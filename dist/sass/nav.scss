@@ -21,6 +21,9 @@ nav {
   @media only screen and (max-width: $breakpoint-tablet) {
     padding: 0 37px;
   }
+  .signoutBtn {
+    display: none;
+  }
   .logo {
     z-index: 110;
     margin-top: 32px;

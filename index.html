@@ -1,60 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Jungle Cook</title>
-    <link rel="icon" type="image/x-icon" href="assets/logo/logo-bg.svg" />
-    <link rel="stylesheet" href="css/styles.css" />
+    <meta http-equiv="refresh" content="0; url=http://example.com" />
+    <script type="text/javascript">
+      window.location.href = "dist/";
+    </script>
+    <title>Page Redirection</title>
   </head>
   <body>
-    <nav>
-      <a href="#home" class="logo"></a>
-      <div class="links">
-        <a href="#home" class="active">Home</a>
-        <a href="#browse" class="">Browse</a>
-        <a href="#create" class="">Create Recipe</a>
-        <a href="#login" class="button">Login</a>
-      </div>
-      <div
-        class="hamburger"
-        onclick="if($('#hamburgerCallapsible').css('height') == '0px') {
-          $('#hamburgerCallapsible').css('height', '302px')
-        } else {
-          $('#hamburgerCallapsible').css('height', '0px')
-        };
-      ">
-        <span>☰</span>
-      </div>
-      <div class="collapsible" id="hamburgerCallapsible">
-        <div class="links collapsibleLinks">
-          <a href="#home" class="active">Home</a>
-          <a href="#browse" class="">Browse</a>
-          <a href="#create" class="">Create Recipe</a>
-          <a href="#login" class="button">Login</a>
-        </div>
-      </div>
-    </nav>
-    <div id="app"></div>
-    <footer>
-      <div>
-        <span>Copyright © 2019 The Jungle Cook</span>
-      </div>
-      <div class="links">
-        <a href="#login">Login</a>
-        <a href="#recipes">Recipes by Category</a>
-        <a href="#copyright">Privacy and Copyright</a>
-        <a href="#createRecipe">Create Recipe</a>
-        <a href="#yourRecipes">Your Recipes</a>
-      </div>
-      <div class="socials">
-        <a class="facebook" href="#home"></a>
-        <a class="instagram" href="#home"></a>
-      </div>
-    </footer>
-    <script src="lib/jquery-3.7.1.min.js"></script>
-    <script type="module" src="model/model.js"></script>
-    <script type="module" src="app/app.js"></script>
+    <!-- Note: don't tell people to `click` the link, just tell them that it is a link. -->
+    If you are not redirected automatically, follow this <a href="dist/">link to example</a>.
   </body>
 </html>

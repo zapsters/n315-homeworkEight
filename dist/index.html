@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Jungle Cook</title>
+    <link rel="icon" type="image/x-icon" href="assets/logo/logo-bg.svg" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <nav>
+      <a href="#home" class="logo"></a>
+      <div class="links">
+        <a href="#home" class="active">Home</a>
+        <a href="#browse" class="">Browse</a>
+        <a href="#createRecipe" class="createRecipe">Create Recipe</a>
+        <a href="#yourRecipes" class="yourRecipes" style="display: none">Your Recipes</a>
+        <a href="#login" class="button loginBtn">Login</a>
+        <a href="" style="display: none" class="button signoutBtn">Sign Out</a>
+      </div>
+      <div
+        class="hamburger"
+        onclick="if($('#hamburgerCallapsible').css('height') == '0px') {
+          $('#hamburgerCallapsible').css('height', '302px')
+        } else {
+          $('#hamburgerCallapsible').css('height', '0px')
+        };
+      ">
+        <span>☰</span>
+      </div>
+      <div class="collapsible" id="hamburgerCallapsible">
+        <div class="links collapsibleLinks">
+          <a href="#home" class="active">Home</a>
+          <a href="#browse" class="">Browse</a>
+          <a href="#create" class="">Create Recipe</a>
+          <a href="#login" class="button loginBtn">Login</a>
+          <a href="" class="button signoutBtn">Sign Out</a>
+        </div>
+      </div>
+    </nav>
+    <div id="app"></div>
+    <footer>
+      <div>
+        <span>Copyright © 2019 The Jungle Cook</span>
+      </div>
+      <div class="links">
+        <a href="#login">Login</a>
+        <a href="#recipes">Recipes by Category</a>
+        <a href="#copyright">Privacy and Copyright</a>
+        <a class="createRecipe" href="#createRecipe">Create Recipe</a>
+        <a style="display: none" class="yourRecipes" href="#yourRecipes">Your Recipes</a>
+      </div>
+      <div class="socials">
+        <a class="facebook" href="#home"></a>
+        <a class="instagram" href="#home"></a>
+      </div>
+    </footer>
+    <script type="module" src="app/app.js"></script>
+  </body>
+</html>

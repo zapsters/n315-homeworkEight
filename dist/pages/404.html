@@ -2,7 +2,9 @@
 <style>
   .error {
     font-family: monospace;
-    margin-top: 200px;
+    /* margin-top: 200px; */
+    position: relative;
+    transform: translateY(180px);
     padding: 0px 50px;
   }
   .error .box {
@@ -14,7 +16,6 @@
     max-width: 500px;
   }
   .error .box p {
-    font-family: sans-serif;
     font-size: 15px;
   }
   .error .box span {
@@ -24,6 +25,8 @@
 <div class="error">
   <div class="box">
     <h1>Error</h1>
-    <span id="errorDetails"></span>
+    <p id="errorDetails"></p>
+
+    <span id="errorCode"></span>
   </div>
 </div>
