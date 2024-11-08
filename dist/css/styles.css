@@ -350,24 +350,13 @@ nav .collapsible .collapsibleLinks {
   }
 }
 
-@media only screen and (max-width: 768px) {
-  .login .forms {
-    flex-direction: column;
-    margin-top: 170px;
-  }
-  .login .forms form {
-    margin-bottom: 114px;
-  }
-  .login .forms form:last-of-type {
-    margin-bottom: 173px;
-  }
-}
 .login {
   min-height: 100vh;
   background-color: #ffd972;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: "Lato";
 }
 .login .forms {
   max-width: 711px;
@@ -375,6 +364,24 @@ nav .collapsible .collapsibleLinks {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+.login .forms form {
+  max-width: 206px;
+  flex: 1;
+}
+.login .forms form input[type=button],
+.login .forms form input[type=submit],
+.login .forms form input[type=reset] {
+  width: 100%;
+  letter-spacing: 1.5px;
+}
+.login .forms p {
+  height: 0px;
+  margin: 0;
+  position: relative;
+  transform: translateY(16px);
+  color: rgb(184, 15, 15);
+  font-size: 13px;
 }
 .login .forms h1 {
   font-family: "Lato";
@@ -446,6 +453,18 @@ nav .collapsible .collapsibleLinks {
   color: #181d2f;
 }
 
+@media only screen and (max-width: 768px) {
+  .login .forms {
+    flex-direction: column;
+    margin-top: 170px;
+  }
+  .login .forms form {
+    margin-bottom: 114px;
+  }
+  .login .forms form:last-of-type {
+    margin-bottom: 173px;
+  }
+}
 footer {
   letter-spacing: 1px;
   display: flex;

@@ -1,31 +1,37 @@
 @use "variables" as *;
 @use "mixins" as *;
-@media only screen and (max-width: $breakpoint-tablet) {
-  .login {
-    .forms {
-      flex-direction: column;
-      margin-top: 170px;
-      form {
-        margin-bottom: 114px;
-      }
-      form:last-of-type {
-        margin-bottom: 173px;
-      }
-    }
-  }
-}
 .login {
   min-height: 100vh;
   background-color: $site-yellow;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: "Lato";
   .forms {
     max-width: 711px;
     width: 80%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    form {
+      max-width: 206px;
+      flex: 1;
+
+      input[type="button"],
+      input[type="submit"],
+      input[type="reset"] {
+        width: 100%;
+        letter-spacing: 1.5px;
+      }
+    }
+    p {
+      height: 0px;
+      margin: 0;
+      position: relative;
+      transform: translateY(16px);
+      color: rgb(184, 15, 15);
+      font-size: 13px;
+    }
     h1 {
       font-family: "Lato";
       font-weight: 900;
@@ -84,6 +90,21 @@
       top: -18px;
       left: 5px;
       color: #181d2f;
+    }
+  }
+}
+
+@media only screen and (max-width: $breakpoint-tablet) {
+  .login {
+    .forms {
+      flex-direction: column;
+      margin-top: 170px;
+      form {
+        margin-bottom: 114px;
+      }
+      form:last-of-type {
+        margin-bottom: 173px;
+      }
     }
   }
 }

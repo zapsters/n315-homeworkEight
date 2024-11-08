@@ -40,6 +40,7 @@ export function signUserUp(firstName, lastName, email, password) {
     })
     .catch((error) => {
       console.log(error);
+      $("#signup-statusText").html(error.code);
     });
 }
 
@@ -65,7 +66,7 @@ export function signUserIn(siEmail, siPassword) {
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
-      console.log(errorMessage);
+      $("#login-statusText").html(errorCode);
     });
 }
 
