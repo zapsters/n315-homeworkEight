@@ -1,0 +1,141 @@
+@use "variables" as *;
+
+.recipeForm {
+  // Input with movable label
+  max-width: 980px;
+  padding-bottom: 173px;
+  padding-top: 214px;
+  width: 90%;
+  margin: 0 auto;
+  h2 {
+    font-family: "Caveat";
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 76px;
+  }
+  .section {
+    position: relative;
+    .addBtn,
+    .minusBtn {
+      background-color: $site-pink;
+      color: white;
+      position: absolute;
+      bottom: 30px;
+      cursor: pointer;
+      z-index: 10;
+      width: 35px;
+      height: 35px;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      border-radius: 50%;
+      right: 0;
+    }
+    .attachBtn {
+      width: 110px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      letter-spacing: 1.5px;
+      border-radius: 17px;
+      font-size: 17px;
+      background-color: $site-pink;
+      max-width: 422px;
+      border: 0;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.16);
+      font-family: "Caveat";
+      font-weight: 300;
+      cursor: pointer;
+      position: absolute;
+      right: 0;
+      bottom: 28px;
+    }
+    .minusBtn {
+      right: 40px;
+    }
+  }
+  .section {
+    margin-bottom: 127px;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode",
+      Geneva, Verdana, sans-serif;
+    p {
+      margin-bottom: 40px;
+      font-weight: 900;
+      font-family: "Lato";
+    }
+  }
+  .section:last-of-type {
+    margin-bottom: 100px;
+  }
+
+  label {
+    position: relitive;
+    display: inline-block;
+    color: #7a7a7a;
+    top: 100px;
+    z-index: 2;
+    font-size: 1em;
+    transition: all 0.2s ease;
+    z-index: 10;
+    position: relative;
+    top: -30px;
+    pointer-events: none;
+    left: 5px;
+    font-family: "Lato";
+    font-weight: 300;
+    font-size: 20px;
+    color: black;
+  }
+
+  .input-container {
+    padding-left: 4px;
+    width: 100%;
+    position: relative;
+    margin: 30px auto 0px;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode",
+      Geneva, Verdana, sans-serif;
+  }
+  input[type="text"] {
+    width: 100%;
+    z-index: 0;
+    z-index: 3;
+    display: inline-block;
+    font-size: 1em;
+    padding: 5px 90px 5px 10px;
+    border: 0;
+    border-bottom: 2px solid black;
+    color: #004d40;
+    background-color: transparent;
+    z-index: 20;
+  }
+  input[type="submit"] {
+    width: 80%;
+    margin: 0 auto;
+    height: 52px;
+    border-radius: 26px;
+    background-color: $site-pink;
+    max-width: 422px;
+    border: 0;
+    box-shadow: 0 10px 6px rgba(0, 0, 0, 0.16);
+    font-family: "Caveat";
+    font-size: 25px;
+    cursor: pointer;
+    display: block;
+  }
+  input[type="submit"]:hover {
+    background-color: $site-lightPink;
+  }
+
+  input[type="text"]:focus ~ label,
+  input[type="text"]:not(:placeholder-shown) ~ label {
+    top: -50px;
+    left: 1px;
+    color: black;
+  }
+
+  textarea:focus,
+  input:focus {
+    outline: none;
+  }
+}

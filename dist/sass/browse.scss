@@ -1,4 +1,5 @@
 @use "variables" as *;
+@use "mixins" as *;
 
 .browse {
   .hero {
@@ -25,8 +26,8 @@
         font-weight: 700;
       }
       .browseList {
-        max-width: 1100px;
-        width: 99%;
+        max-width: 1300px;
+        width: 90%;
         margin: 0 auto;
         padding-top: 195px;
         @media only screen and (max-width: $breakpoint-tablet) {
@@ -45,69 +46,112 @@
           align-items: stretch;
           justify-content: space-between;
           flex-wrap: wrap;
-          row-gap: 50px;
+          flex-shrink: 0;
+          row-gap: 65px !important;
           gap: 10px;
 
-          .recipe:nth-of-type(2) .recipe-coverImg {
-            background-image: url("../assets/images/recipe-burger.jpg");
+          .recipe:hover {
+            .recipe-coverImg {
+              .background {
+                scale: 1.2;
+              }
+              .viewbtn {
+                display: block;
+              }
+            }
+            .yourRecipeBtns {
+              display: flex;
+            }
           }
-          .recipe:nth-of-type(3) .recipe-coverImg {
-            background-image: url("../assets/images/recipe-pilaf.jpg");
-          }
-          .recipe:nth-of-type(4) .recipe-coverImg {
-            background-image: url("../assets/images/recipe-chowmein.jpg");
-          }
-
           .recipe {
-            flex: 40%;
-            max-width: 524px;
-            width: 100%;
+            max-width: fit-content;
+            flex-shrink: 1 0 auto;
+            border-radius: 24px;
+            flex: 49%;
             display: flex;
             align-items: stretch;
-            justify-content: center;
+            position: relative;
 
+            .recipe-content,
             .recipe-coverImg {
-              flex: 1;
-              border-radius: 24px;
-              background-image: url("../assets/images/recipe-pizza.jpg");
+              box-shadow: 8px 8px 6px rgba(0, 0, 0, 0.448);
+            }
+            .yourRecipeBtns {
+              display: none;
+              align-items: center;
+              justify-content: center;
+              gap: 30px;
+              position: absolute;
+              bottom: 0;
+              padding-top: 8px;
+              padding-bottom: 20px;
+              transform: translateY(100%);
+              width: 100%;
+              z-index: 1;
+              .button {
+                display: block;
+                @include site-btn-yellow;
+              }
+            }
+            .recipe-coverImg {
+              display: flex;
+              align-items: center;
+              justify-content: space-evenly;
+              border-radius: 24px 0 0 24px;
               background-color: white;
-              background-size: cover;
-              background-position: center;
-              background-repeat: no-repeat;
-              aspect-ratio: 300 / 263;
-              min-width: 100px;
-              max-width: 300px;
+              width: 300px;
+              overflow: hidden;
+              .viewbtn {
+                display: none;
+                @include site-btn-yellow;
+                position: absolute;
+              }
+              .background {
+                transition: scale 0.4s;
+                // background-image: url("../assets/images/recipe-pizza.jpg");
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                width: 100%;
+                height: 100%;
+              }
             }
             .recipe-content {
-              border-radius: 24px;
+              border-radius: 0 24px 24px 0;
               font-family: "Lato";
-              max-width: 224px;
+              max-width: 240px;
+              min-height: 263px;
               background-color: #fff;
-              padding: 42px 46px;
+              padding: 32px 36px;
               h1 {
-                margin-bottom: 19.5px;
-                border-bottom: 2px solid black;
-                font-size: 15px;
+                margin-bottom: 17px;
+                border-bottom: 3px solid black;
+                font-size: 26px;
                 font-weight: 900;
               }
               p {
-                font-size: 9px;
+                font-size: 10px;
+                display: -webkit-box;
+                max-width: 200px;
+                -webkit-line-clamp: 5;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
               }
               .grid-container {
                 display: grid;
                 grid-template-columns: auto 1fr;
-                max-width: 83.57px;
+                max-width: 115px;
                 margin: 0 auto;
               }
               .grid-item {
                 text-align: center;
                 width: 100%;
                 font-family: "Lato";
-                font-size: 10px;
                 display: flex;
                 align-items: center;
                 justify-content: space-evenly;
                 p {
+                  font-size: 12px;
                   margin: 0;
                 }
               }
@@ -117,10 +161,10 @@
               }
               .grid-item.right {
                 text-align: right;
-                max-width: 23px;
+                max-width: 28px;
               }
               img {
-                width: 23px;
+                width: 100%;
               }
             }
           }

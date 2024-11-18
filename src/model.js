@@ -20,7 +20,7 @@ onAuthStateChanged(auth, (user) => {
     $(".signoutBtn").show();
     $(".loginBtn").hide();
     $(".yourRecipes").show();
-    $(".createRecipe").hide();
+    $(".createRecipe").show();
   } else {
     $("#status").html("not signed in");
     $(".signoutBtn").hide();
@@ -29,6 +29,21 @@ onAuthStateChanged(auth, (user) => {
     $(".createRecipe").show();
   }
 });
+
+export function getData(callback) {
+  $.getJSON("data/data.json", function (data) {
+    callback(data);
+  })
+    .done(function () {
+      console.log("second success");
+    })
+    .fail(function () {
+      console.log("error");
+    })
+    .always(function () {
+      console.log("complete");
+    });
+}
 
 export function signUserUp(firstName, lastName, email, password) {
   // console.log(`${firstName}, ${lastName}, ${email}, ${password}`);
@@ -78,7 +93,6 @@ export function changeRoute(e) {
     pageID = `home`;
   }
   $.get(`pages/${pageID}.html`, function (data) {
-    // console.log(`data ` + data);
     $(`#app`).html(data);
   })
     .done(function () {
@@ -86,13 +100,16 @@ export function changeRoute(e) {
     })
     .fail(function (error) {
       $.get(`pages/404.html`, function (data) {
-        $(`#app`).html(data);
+        $(`#app`).html(
+          `<!DOCTYPE html><style>.error{font-family:monospace;margin-top:200px;padding:0 50px}.error .box{margin:0 auto;background-color:rgba(128,128,128,.356);width:fit-content;padding:30px 30px;width:100%;max-width:500px}.error .box span{font-family:sans-serif;font-size:15px}.error .box span{font-size:15px}</style><div class='error'><div class='box'><h1>Error</h1><p id='errorDetails'></p><p id='errorCode'></p></div></div>`
+        );
       }).done(function () {
         $(`#errorDetails`).html(`The page you are looking for '${pageID}' can not be found.`);
         $(`#errorCode`).html(`${error.status}: ${error.statusText}`);
       });
     })
     .always(function () {
+      //Add the active class to anchor tags with the same pageID as an href
       $(`a`).each(function () {
         let aHref = $(this).attr(`href`).replace(`#`, ``);
         if (aHref == pageID) {
@@ -102,4 +119,30 @@ export function changeRoute(e) {
         }
       });
     });
+}
+
+export function checkRequired(id) {
+  let allAreFilled = true;
+  document
+    .getElementById(id)
+    .querySelectorAll("[required]")
+    .forEach(function (i) {
+      if (!allAreFilled) return;
+      if (i.type === "radio") {
+        let radioValueCheck = false;
+        document
+          .getElementById("myForm")
+          .querySelectorAll(`[name=${i.name}]`)
+          .forEach(function (r) {
+            if (r.checked) radioValueCheck = true;
+          });
+        allAreFilled = radioValueCheck;
+        return;
+      }
+      if (!i.value) {
+        allAreFilled = false;
+        return;
+      }
+    });
+  return allAreFilled;
 }

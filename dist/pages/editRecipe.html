@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<form class="recipeForm" id="createRecipeForm">
+  <h2>Hey ${NAME}, edit your recipe!</h2>
+
+  <div class="section" id="">
+    <div class="input-container">
+      <input required placeholder="" id="recipeName" type="text" />
+      <label for="recipeName">Edit Recipe Name</label>
+    </div>
+    <div class="input-container">
+      <input placeholder="" id="recipeImage" type="text" />
+      <span class="attachBtn">Attach file</span>
+      <label for="recipeImage">Add Recipe Image Url</label>
+    </div>
+    <div class="input-container">
+      <input placeholder="" id="recipeDescription" type="text" />
+      <label for="recipeDescription">Recipe Description</label>
+    </div>
+    <div class="input-container">
+      <input required placeholder="" id="recipeTotalTime" type="text" />
+      <label for="recipeTotalTime">Recipe Total Time</label>
+    </div>
+    <div class="input-container">
+      <input required placeholder="" id="recipeServingSize" type="text" />
+      <label for="recipeServingSize">Recipe Serving Size</label>
+    </div>
+  </div>
+  <div class="section" id="">
+    <p>Edit Ingredients:</p>
+    <div id="ingredients">
+      <div class="input-container">
+        <input placeholder="" id="ingredient1" type="text" />
+        <label for="name">Ingredient #1</label>
+      </div>
+      <div class="input-container">
+        <input placeholder="" id="ingredient2" type="text" />
+        <label for="name">Ingredient #2</label>
+      </div>
+      <div class="input-container">
+        <input placeholder="" id="ingredient3" type="text" />
+        <label for="name">Ingredient #3</label>
+      </div>
+    </div>
+    <span class="addBtn" id="ingredientAdd">+</span>
+    <span class="minusBtn" id="ingredientMinus">-</span>
+  </div>
+  <div class="section">
+    <p>Edit Instructions:</p>
+    <div id="instructions">
+      <div class="input-container">
+        <input placeholder="" id="instruction1" type="text" />
+        <label for="name">Instruction #1</label>
+      </div>
+      <div class="input-container">
+        <input placeholder="" id="instruction2" type="text" />
+        <label for="name">Instruction #2</label>
+      </div>
+      <div class="input-container">
+        <input placeholder="" id="instruction3" type="text" />
+        <label for="name">Instruction #3</label>
+      </div>
+    </div>
+    <div class="addBtn" id="instructionAdd"><span>+</span></div>
+    <span class="minusBtn" id="instructionMinus">-</span>
+  </div>
+  <input type="submit" id="submitBtn" value="Submit Changes" />
+</form>
