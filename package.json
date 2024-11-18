@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "compile": "sass dist/sass/styles.scss dist/css/styles.css -w",
-    "liveserver": "live-server",
+    "liveserver": "live-server dist",
     "build-webpack": "webpack"
   },
   "keywords": [],

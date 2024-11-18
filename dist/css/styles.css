@@ -5,12 +5,6 @@
   box-sizing: border-box;
 }
 
-html,
-body {
-  height: 100%;
-  position: relative;
-}
-
 h1,
 h2,
 h3,
@@ -22,6 +16,10 @@ p {
 }
 
 /* End of Reset */
+#app {
+  min-height: 100vh;
+}
+
 @font-face {
   font-family: "Caveat";
   src: url("../assets/fonts/Caveat-Regular.ttf");
@@ -160,7 +158,6 @@ nav .logo {
 nav .logo a {
   height: 100%;
   width: 100%;
-  background-color: red;
 }
 nav .links {
   margin-top: 40px;
@@ -260,14 +257,14 @@ nav .collapsible .collapsibleLinks {
 }
 .home .hero .content {
   position: absolute;
+  width: 100%;
+  min-height: 100%;
+  top: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  height: 100%;
-  top: 0;
 }
-.home .hero .content .main {
+.home .hero .main {
   position: absolute;
   z-index: 1;
   display: flex;
@@ -282,22 +279,22 @@ nav .collapsible .collapsibleLinks {
   text-align: center;
 }
 @media only screen and (max-width: 380px) {
-  .home .hero .content .main {
+  .home .hero .main {
     height: 257px;
   }
 }
-.home .hero .content .main span {
+.home .hero .main span {
   line-height: 1.3em;
   max-width: 164px;
   font-family: "Lato";
   font-size: 13px;
 }
 @media only screen and (max-width: 380px) {
-  .home .hero .content .main span {
+  .home .hero .main span {
     font-size: 9px;
   }
 }
-.home .hero .content .main h1 {
+.home .hero .main h1 {
   max-width: 164px;
   font-family: "Caveat";
   font-size: 24px;
@@ -306,11 +303,11 @@ nav .collapsible .collapsibleLinks {
   margin-bottom: 29px;
 }
 @media only screen and (max-width: 380px) {
-  .home .hero .content .main h1 {
+  .home .hero .main h1 {
     font-size: 17px;
   }
 }
-.home .hero .content .secondary {
+.home .hero .secondary {
   position: relative;
   transform: translate(190px, -135px);
   display: flex;
@@ -325,17 +322,17 @@ nav .collapsible .collapsibleLinks {
   text-align: center;
 }
 @media only screen and (max-width: 768px) {
-  .home .hero .content .secondary {
+  .home .hero .secondary {
     transform: translate(90px, -200px);
   }
 }
 @media only screen and (max-width: 380px) {
-  .home .hero .content .secondary {
+  .home .hero .secondary {
     height: 121px;
     transform: translate(90px, -135px);
   }
 }
-.home .hero .content .secondary span {
+.home .hero .secondary span {
   text-align: center;
   line-height: 1.3em;
   max-width: 105px;
@@ -345,9 +342,136 @@ nav .collapsible .collapsibleLinks {
   text-justify: inter-word;
 }
 @media only screen and (max-width: 380px) {
-  .home .hero .content .secondary span {
+  .home .hero .secondary span {
     font-size: 8px;
   }
+}
+
+.browse .hero {
+  background-image: url("../assets/images/recipe-hero.jpg");
+  background-size: cover;
+  background-position: bottom;
+  min-height: 100vh;
+  padding-bottom: 100px;
+  position: relative;
+}
+.browse .hero .overlay {
+  position: absolute;
+  opacity: 0.6;
+  background-color: #a7e8bd;
+  width: 100%;
+  bottom: 0;
+  top: 0;
+}
+.browse .hero .content {
+  position: relative;
+}
+.browse .hero .content h1 {
+  font-family: "Caveat";
+  margin-bottom: 50px;
+  font-size: 25px;
+  font-weight: 700;
+}
+.browse .hero .content .browseList {
+  max-width: 1100px;
+  width: 99%;
+  margin: 0 auto;
+  padding-top: 195px;
+}
+@media only screen and (max-width: 768px) {
+  .browse .hero .content .browseList {
+    width: fit-content;
+    width: 100%;
+    max-width: 524px;
+  }
+  .browse .hero .content .browseList .recipeList {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+  }
+}
+.browse .hero .content .browseList .recipeList {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  row-gap: 50px;
+  gap: 10px;
+}
+.browse .hero .content .browseList .recipeList .recipe:nth-of-type(2) .recipe-coverImg {
+  background-image: url("../assets/images/recipe-burger.jpg");
+}
+.browse .hero .content .browseList .recipeList .recipe:nth-of-type(3) .recipe-coverImg {
+  background-image: url("../assets/images/recipe-pilaf.jpg");
+}
+.browse .hero .content .browseList .recipeList .recipe:nth-of-type(4) .recipe-coverImg {
+  background-image: url("../assets/images/recipe-chowmein.jpg");
+}
+.browse .hero .content .browseList .recipeList .recipe {
+  flex: 40%;
+  max-width: 524px;
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+}
+.browse .hero .content .browseList .recipeList .recipe .recipe-coverImg {
+  flex: 1;
+  border-radius: 24px;
+  background-image: url("../assets/images/recipe-pizza.jpg");
+  background-color: white;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  aspect-ratio: 300/263;
+  min-width: 100px;
+  max-width: 300px;
+}
+.browse .hero .content .browseList .recipeList .recipe .recipe-content {
+  border-radius: 24px;
+  font-family: "Lato";
+  max-width: 224px;
+  background-color: #fff;
+  padding: 42px 46px;
+}
+.browse .hero .content .browseList .recipeList .recipe .recipe-content h1 {
+  margin-bottom: 19.5px;
+  border-bottom: 2px solid black;
+  font-size: 15px;
+  font-weight: 900;
+}
+.browse .hero .content .browseList .recipeList .recipe .recipe-content p {
+  font-size: 9px;
+}
+.browse .hero .content .browseList .recipeList .recipe .recipe-content .grid-container {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  max-width: 83.57px;
+  margin: 0 auto;
+}
+.browse .hero .content .browseList .recipeList .recipe .recipe-content .grid-item {
+  text-align: center;
+  width: 100%;
+  font-family: "Lato";
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.browse .hero .content .browseList .recipeList .recipe .recipe-content .grid-item p {
+  margin: 0;
+}
+.browse .hero .content .browseList .recipeList .recipe .recipe-content .grid-item:nth-of-type(1),
+.browse .hero .content .browseList .recipeList .recipe .recipe-content .grid-item:nth-of-type(2) {
+  margin-bottom: 17px;
+}
+.browse .hero .content .browseList .recipeList .recipe .recipe-content .grid-item.right {
+  text-align: right;
+  max-width: 23px;
+}
+.browse .hero .content .browseList .recipeList .recipe .recipe-content img {
+  width: 23px;
 }
 
 .login {
@@ -472,24 +596,22 @@ footer {
   justify-content: space-between;
   padding: 0 40px 26px 40px;
   position: absolute;
-  bottom: 0;
   width: 100%;
   max-width: 1920px;
-  left: 50%;
-  transform: translateX(-50%);
+  transform: translateY(-100%);
   font-family: "lato";
   font-size: 15px;
   font-style: italic;
   pointer-events: none;
+}
+footer * {
+  pointer-events: all;
 }
 @media only screen and (max-width: 768px) {
   footer {
     font-size: 10px;
     padding: 0 20px 26px 20px;
   }
-}
-footer * {
-  pointer-events: all;
 }
 footer .links {
   max-width: 641px;
