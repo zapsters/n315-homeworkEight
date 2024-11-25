@@ -2,20 +2,27 @@ import {
   getAuth,
   createUserWithEmailAndPassword,
   signOut,
+  updateProfile,
   signInWithEmailAndPassword,
   onAuthStateChanged,
 } from "firebase/auth";
-import { initListenersByPage } from "./index";
-import * as $ from "jquery";
-import { app } from "./firebaseConfig";
 
+import { collection, addDoc } from "firebase/firestore";
+
+import { initListenersByPage, userRecipes } from "./index";
+import * as $ from "jquery";
+import { app, db } from "./firebaseConfig";
+let uid = "";
 const auth = getAuth(app);
 
 onAuthStateChanged(auth, (user) => {
   if (user) {
     // User is signed in, see docs for a list of available properties
     // https://firebase.google.com/docs/reference/js/auth.user
-    const uid = user.uid;
+    console.log(user);
+
+    uid = user.uid;
+    $(".displayName").html(getUserDisplayName());
     $("#status").html("signed in");
     $(".signoutBtn").show();
     $(".loginBtn").hide();
@@ -34,21 +41,29 @@ export function getData(callback) {
   $.getJSON("data/data.json", function (data) {
     callback(data);
   })
-    .done(function () {
-      console.log("second success");
-    })
+    .done(function () {})
     .fail(function () {
       console.log("error");
     })
-    .always(function () {
-      console.log("complete");
-    });
+    .always(function () {});
 }
 
 export function signUserUp(firstName, lastName, email, password) {
   // console.log(`${firstName}, ${lastName}, ${email}, ${password}`);
   createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
+      updateProfile(auth.currentUser, {
+        displayName: `${firstName}`,
+        lastName: `${lastName}`,
+      })
+        .then(() => {
+          // Profile updated!
+          // ...
+        })
+        .catch((error) => {
+          // An error occurred
+          // ...
+        });
       const user = userCredential.user;
       console.log(user, "userCreated");
       window.location.hash = "";
@@ -88,6 +103,7 @@ export function signUserIn(siEmail, siPassword) {
 export function changeRoute(e) {
   let hashTag = window.location.hash;
   let pageID = hashTag.replace(`#`, ``);
+  pageID = pageID.split("?")[0];
 
   if (pageID == ``) {
     pageID = `home`;
@@ -109,6 +125,8 @@ export function changeRoute(e) {
       });
     })
     .always(function () {
+      window.scrollTo(0, 0);
+      $("#hamburgerCallapsible").css("height", "0px");
       //Add the active class to anchor tags with the same pageID as an href
       $(`a`).each(function () {
         let aHref = $(this).attr(`href`).replace(`#`, ``);
@@ -145,4 +163,19 @@ export function checkRequired(id) {
       }
     });
   return allAreFilled;
+}
+
+export function getUserDisplayName() {
+  const auth = getAuth();
+  const user = auth.currentUser;
+  if (user !== null) {
+    // The user object has basic properties such as display name, email, etc.
+    const displayName = user.displayName;
+    const email = user.email;
+    const photoURL = user.photoURL;
+    const emailVerified = user.emailVerified;
+
+    return displayName;
+  }
+  return "anonymous";
 }

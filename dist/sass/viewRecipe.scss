@@ -1,0 +1,76 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.viewRecipe {
+  margin: 0 auto;
+  max-width: 1200px;
+  margin-top: 243px;
+  padding: 0 30px;
+  margin-bottom: 137px;
+  h1 {
+    font-family: "Lato";
+    font-weight: 900;
+    font-size: 25px;
+  }
+  h2 {
+    font-family: "Lato";
+    font-weight: 700;
+    font-size: 25px;
+  }
+  h3 {
+    font-family: "Lato";
+    font-weight: 700;
+    font-size: 20px;
+  }
+  p {
+    font-family: "Caveat";
+    font-weight: 200;
+    font-size: 20px;
+  }
+  .topBit {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    max-width: 100%;
+    gap: 45px;
+    .recipeImg {
+      max-width: 500px;
+      flex: 0.6;
+      img {
+        background-color: red;
+        width: 100%;
+      }
+    }
+    .details {
+      // max-width: 600px;
+      flex: 1;
+      * {
+        margin-bottom: 35px;
+      }
+    }
+  }
+  .editBtn {
+    @include site-btn-yellow;
+    padding: 10px 20px;
+    margin-top: 68px;
+  }
+  #recipeIngredientsList {
+    margin-bottom: 58px;
+  }
+  .listSpacing {
+    line-height: 1.5em;
+    text-indent: -0.9em;
+    margin-left: 0.9em;
+    p {
+      font-weight: 100;
+    }
+  }
+}
+@media only screen and (max-width: $breakpoint-tablet) {
+  .viewRecipe {
+    margin-bottom: 195px;
+    .topBit {
+      flex-direction: column;
+    }
+  }
+}

@@ -15,6 +15,11 @@
   }
   .section {
     position: relative;
+    color: red;
+    #instructions,
+    #ingredients {
+      min-height: 54.67px;
+    }
     .addBtn,
     .minusBtn {
       background-color: $site-pink;
@@ -105,7 +110,7 @@
     padding: 5px 90px 5px 10px;
     border: 0;
     border-bottom: 2px solid black;
-    color: #004d40;
+    color: black;
     background-color: transparent;
     z-index: 20;
   }
@@ -129,7 +134,7 @@
 
   input[type="text"]:focus ~ label,
   input[type="text"]:not(:placeholder-shown) ~ label {
-    top: -50px;
+    top: -60px;
     left: 1px;
     color: black;
   }

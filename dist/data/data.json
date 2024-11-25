@@ -1,26 +1,30 @@
-{
-  "Supreme Pizza": {
+[
+  {
+    "recipeName": "Supreme Pizza",
     "imageUrl": "../assets/images/recipe-pizza.jpg",
     "description": "Make pizza night super duper out of this world with homemade pizza. This recipe is supreme with vegetables and two types of meat. Yum!",
     "cookTime": "1h 24min",
     "serveSize": "4"
   },
-  "Classic Burger": {
+  {
+    "recipeName": "Classic Burger",
     "imageUrl": "../assets/images/recipe-burger.jpg",
     "description": "Sink your teeth into a delicious restaurant-style, hamburger recipe made from lean beef. Skip the prepackaged patties and take the extra time to craft up your own, and that little extra effort will be worth it.",
     "cookTime": "30min",
     "serveSize": "4"
   },
-  "Chicken Biryani": {
+  {
+    "recipeName": "Chicken Biryani",
     "imageUrl": "../assets/images/recipe-pilaf.jpg",
     "description": "Chicken Biryani is a bold and flavorful Indian dish with crazy tender bites of chicken with bell peppers in a deliciously spiced and fragrant rice.",
     "cookTime": "1h 15min",
     "serveSize": "6"
   },
-  "Ch. Chow Mein": {
+  {
+    "recipeName": "Ch. Chow Mein",
     "imageUrl": "../assets/images/recipe-chowmein.jpg",
     "description": "A great Chow Mein comes down to the sauce - it takes more than just soy sauce and sugar! Jam packed with a surprising amount of hidden vegetables, customize this Chicken Chow Mein recipe using your protein of choice!",
     "cookTime": "20min",
     "serveSize": "4"
   }
-}
+]

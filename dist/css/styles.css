@@ -372,9 +372,10 @@ nav .collapsible .collapsibleLinks {
   margin-bottom: 50px;
   font-size: 25px;
   font-weight: 700;
+  min-width: 168px;
 }
 .browse .hero .content .browseList {
-  max-width: 1300px;
+  max-width: 1500px;
   width: 90%;
   margin: 0 auto;
   padding-top: 195px;
@@ -462,7 +463,7 @@ nav .collapsible .collapsibleLinks {
   justify-content: space-evenly;
   border-radius: 24px 0 0 24px;
   background-color: white;
-  width: 300px;
+  width: 340px;
   overflow: hidden;
 }
 .browse .hero .content .browseList .recipeList .recipe .recipe-coverImg .viewbtn {
@@ -488,6 +489,7 @@ nav .collapsible .collapsibleLinks {
 }
 .browse .hero .content .browseList .recipeList .recipe .recipe-coverImg .background {
   transition: scale 0.4s;
+  background-image: url("https://static-00.iconduck.com/assets.00/image-missing-symbolic-icon-256x256-7371iza3.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -497,7 +499,7 @@ nav .collapsible .collapsibleLinks {
 .browse .hero .content .browseList .recipeList .recipe .recipe-content {
   border-radius: 0 24px 24px 0;
   font-family: "Lato";
-  max-width: 240px;
+  max-width: 300px;
   min-height: 263px;
   background-color: #fff;
   padding: 32px 36px;
@@ -507,11 +509,15 @@ nav .collapsible .collapsibleLinks {
   border-bottom: 3px solid black;
   font-size: 26px;
   font-weight: 900;
+  white-space: normal;
+  word-break: break-word;
+  text-wrap: wrap;
 }
 .browse .hero .content .browseList .recipeList .recipe .recipe-content p {
   font-size: 10px;
   display: -webkit-box;
   max-width: 200px;
+  min-height: 60px;
   -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
   overflow: hidden;
@@ -677,6 +683,11 @@ nav .collapsible .collapsibleLinks {
 }
 .recipeForm .section {
   position: relative;
+  color: red;
+}
+.recipeForm .section #instructions,
+.recipeForm .section #ingredients {
+  min-height: 54.67px;
 }
 .recipeForm .section .addBtn,
 .recipeForm .section .minusBtn {
@@ -763,7 +774,7 @@ nav .collapsible .collapsibleLinks {
   padding: 5px 90px 5px 10px;
   border: 0;
   border-bottom: 2px solid black;
-  color: #004d40;
+  color: black;
   background-color: transparent;
   z-index: 20;
 }
@@ -786,7 +797,7 @@ nav .collapsible .collapsibleLinks {
 }
 .recipeForm input[type=text]:focus ~ label,
 .recipeForm input[type=text]:not(:placeholder-shown) ~ label {
-  top: -50px;
+  top: -60px;
   left: 1px;
   color: black;
 }
@@ -881,6 +892,96 @@ footer .socials a {
 }
 footer .socials a.facebook {
   background-image: url("../assets/images/facebook.svg");
+}
+
+.viewRecipe {
+  margin: 0 auto;
+  max-width: 1200px;
+  margin-top: 243px;
+  padding: 0 30px;
+  margin-bottom: 137px;
+}
+.viewRecipe h1 {
+  font-family: "Lato";
+  font-weight: 900;
+  font-size: 25px;
+}
+.viewRecipe h2 {
+  font-family: "Lato";
+  font-weight: 700;
+  font-size: 25px;
+}
+.viewRecipe h3 {
+  font-family: "Lato";
+  font-weight: 700;
+  font-size: 20px;
+}
+.viewRecipe p {
+  font-family: "Caveat";
+  font-weight: 200;
+  font-size: 20px;
+}
+.viewRecipe .topBit {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  max-width: 100%;
+  gap: 45px;
+}
+.viewRecipe .topBit .recipeImg {
+  max-width: 500px;
+  flex: 0.6;
+}
+.viewRecipe .topBit .recipeImg img {
+  background-color: red;
+  width: 100%;
+}
+.viewRecipe .topBit .details {
+  flex: 1;
+}
+.viewRecipe .topBit .details * {
+  margin-bottom: 35px;
+}
+.viewRecipe .editBtn {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  padding: 10px 52px;
+  background-color: #ffd972;
+  border-radius: 52px;
+  box-shadow: 0 10px 6px rgba(0, 0, 0, 0.16);
+  border-style: none;
+  font-family: "Caveat";
+  font-size: 25px;
+  text-decoration: none;
+  color: black;
+  z-index: 1;
+  cursor: pointer;
+  padding: 10px 20px;
+  margin-top: 68px;
+}
+.viewRecipe .editBtn:hover {
+  background-color: #f7ce5e;
+}
+.viewRecipe #recipeIngredientsList {
+  margin-bottom: 58px;
+}
+.viewRecipe .listSpacing {
+  line-height: 1.5em;
+  text-indent: -0.9em;
+  margin-left: 0.9em;
+}
+.viewRecipe .listSpacing p {
+  font-weight: 100;
+}
+
+@media only screen and (max-width: 768px) {
+  .viewRecipe {
+    margin-bottom: 195px;
+  }
+  .viewRecipe .topBit {
+    flex-direction: column;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
