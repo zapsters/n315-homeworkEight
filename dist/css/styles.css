@@ -683,7 +683,6 @@ nav .collapsible .collapsibleLinks {
 }
 .recipeForm .section {
   position: relative;
-  color: red;
 }
 .recipeForm .section #instructions,
 .recipeForm .section #ingredients {
